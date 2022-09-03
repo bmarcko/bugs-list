@@ -43,13 +43,14 @@ $bugs_list = json_decode($bugs);
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($bugs_list->issues as $bug){?> 
-            <tr>
-                <td><?php echo $bug->id;?></td>
-                <td><?php echo $bug->summary;>?></td>
-                <td><?php echo $bug->severity->name;>?></td>
-                <td><?php echo $bug->status->name;>?></td>
-        <?php
+        <?php 
+        foreach ($bugs_list->issues as $bug){
+            echo '<tr>';
+            echo '<th>' . $bug->id . '</th';
+            echo '<td>' . $bug->summary . '</td';
+            echo '<td>' . $bug->severity->name . '</td';
+            echo '<td>' . $bug->status->name . '</td';
+            echo '</tr>';
         }
         ?>
     </tbody>
