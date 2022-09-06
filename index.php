@@ -30,30 +30,28 @@ $bugs_list = json_decode($bugs);
 </head>
 <body>
 <p><h1>IPT10 Bugs List</h1></p>
-<p><a href="">BOBBY MARCKO L. CRUZ</a></p>
+<p><h2><a href="">BOBBY MARCKO L. CRUZ</a></h2></p>
 
 
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Summary</th>
-            <th>Severity</th>
-            <th>Status</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php 
-        foreach ($bugs_list->issues as $bug){
-            echo '<tr>';
-            echo '<th>' . $bug->id . '</th';
-            echo '<td>' . $bug->summary . '</td';
-            echo '<td>' . $bug->severity->name . '</td';
-            echo '<td>' . $bug->status->name . '</td';
-            echo '</tr>';
-        }
-        ?>
-    </tbody>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Summary</th>
+        <th>Severity</th>
+        <th>Status</th>
+    </tr>
+<tbody>
+    <?php 
+    foreach ($bugs_list->issues as $bug){
+    ?>
+    <tr>
+        <td><?php echo $bug->id; ?></td>
+        <td><?php echo $bug->summary; ?></td>
+        <td><?php echo $bug->severity->name; ?></td>
+        <td><?php echo $bug->status->name; ?></td>
+    </tr>
+    <?php } ?>
+</tbody>
 </table>
 </body>
 </html>
